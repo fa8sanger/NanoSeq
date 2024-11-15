@@ -1,4 +1,4 @@
-# NanoSeq
+# NanoSeq  
 [![CircleCI][circleci-status]][circleci-pipeline]
 [![Quay Badge][quay-status]][quay-repo]
 
