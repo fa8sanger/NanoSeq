@@ -413,7 +413,7 @@ if (n_variants > 0) {
 
   tris = sapply(names(tri_obs), function(x) unlist(strsplit(x, ">"))[1])
   y = tri_obs / difference_from_genome_wide[tris];
-  maxy = max(y)
+  maxy = max(y, na.rm = T)
   h = barplot(y, las = 2, col = colours, border = NA, ylim = c(0, maxy * 1.5), space = 1, cex.names = 0.6, names.arg = xstr, ylab = "Corrected mutation counts", main = "Corrected-to-genome mutation counts")
   for (j in 1:length(sub_vec)) {
     xpos = h[c((j - 1) * 16 + 1, j * 16)]
@@ -431,7 +431,7 @@ if (n_variants > 0) {
 
   tris = sapply(names(tri_obs), function(x) unlist(strsplit(x, ">"))[1])
   y = tri_obs / tri_bg[tris];
-  maxy = max(y)
+  maxy = max(y, na.rm = T)
   h = barplot(y, las = 2, col = colours, border = NA, ylim = c(0, maxy * 1.5), space = 1, cex.names = 0.6, names.arg = xstr, ylab = "Mutation rates", main = "Mutation rates")
   for (j in 1:length(sub_vec)) {
     xpos = h[c((j - 1) * 16 + 1, j * 16)]
@@ -478,7 +478,7 @@ ratio2genome = difference_from_genome_wide
 
 tris = sapply(names(tri_obs), function(x) unlist(strsplit(x, ">"))[1])
 y = tri_obs / difference_from_genome_wide[tris];
-maxy = max(y)
+maxy = max(y, na.rm = T)
 trint_subst_obs = tri_obs
 trint_onto_genome = y
 trint_bg = tri_bg
@@ -713,7 +713,7 @@ if(nrow(mismatches) > 0) {
   par(mar = c(4, 6, 2, 2))
   tris = sapply(names(tri_obs), function(x) unlist(strsplit(x, ">"))[1])
   y = (tri_obs_pyr / (tri_bg[tris] / 2)) * (tri_obs_pur / (tri_bg[tris] / 2));
-  maxy = max(y)
+  maxy = max(y, na.rm = T)
   ##y = (tri_obs_pyr/(tri_bg[tris])) * (tri_obs_pur/(tri_bg[tris])); maxy = max(y)
   h = barplot(y, las = 2, col = colours, border = NA, ylim = c(0, maxy * 1.5), space = 1, cex.names = 0.6, names.arg = xstr, ylab = "Error rates", main = "Error rates")
   for (j in 1:length(sub_vec)) {
@@ -733,7 +733,7 @@ if(nrow(mismatches) > 0) {
   par(mar = c(4, 6, 2, 2))
   tris = sapply(names(tri_obs), function(x) unlist(strsplit(x, ">"))[1])
   y = errors_per_channel;
-  maxy = max(y)
+  maxy = max(y, na.rm = T)
   h = barplot(y, las = 2, col = colours, border = NA, ylim = c(0, maxy * 1.5), space = 1, cex.names = 0.6, names.arg = xstr, ylab = "Predicted errors", main = "Predicted errors")
   for (j in 1:length(sub_vec)) {
     xpos = h[c((j - 1) * 16 + 1, j * 16)]
